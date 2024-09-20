@@ -28,13 +28,6 @@ class LoginController extends GetxController {
         loginModel.value = loginData;
         print(response.body);
 
-        // Mengambil token dari data
-        String token = loginModel.value?.data.token ?? '';
-
-        // Menyimpan token ke local storage
-        // name.value = loginModel.value?.data.user.name ?? '';
-        box.write('token', token);
-
         Get.snackbar('Success', 'Login successful'); // Notifikasi sukses
       } else {
         Get.snackbar('Error', 'Login failed'); // Notifikasi jika gagal
